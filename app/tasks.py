@@ -4,6 +4,7 @@ __email__ = 'chapeter@cisco.com'
 import acitoolkit as ACI
 import sys
 
+
 apicurl = 'http://10.94.238.68'
 apicuser = 'admin'
 apicpass = 'cisco123'
