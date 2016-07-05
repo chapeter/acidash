@@ -5,5 +5,5 @@ WORKDIR /opt
 RUN git clone http://github.com/chapeter/acidash
 WORKDIR acidash
 
-EXPOSE 8000
+EXPOSE 5000
 CMD [ "python", "main.py" ]
