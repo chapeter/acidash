@@ -1,0 +1,20 @@
+{% extends "base_layout.html" %}
+{% block content%}
+
+<h1>Data Center Services Status</h1>
+    <table border="0" style="width:100%">
+        <tr>
+            <th>Item</th>
+            <th>Health</th>
+        </tr>
+        {% for n in data %}
+        <tr>
+            <td>{{n['name']}}</td>
+            <td bgcolor="{{n['bgcolor']}}"><font color="white">{{n['health']}}</font></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}
