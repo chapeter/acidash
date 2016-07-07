@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+    width: 75%
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+h1 {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+    }
+
+.hostname {
+    text-align: center;
+}
