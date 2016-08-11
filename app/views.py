@@ -7,6 +7,7 @@ import socket
 @app.route('/index')
 def index():
     hostname = socket.gethostname()
+    data = []
     data = tasks.getHealth()
     #print data
     return render_template('index.html', data=data, hostname=hostname)
