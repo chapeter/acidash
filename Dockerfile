@@ -1,4 +1,4 @@
-FROM dockercisco/acitoolkit
+FROM chapeter/alpine-acitoolkit
 MAINTAINER Chad Peterson, chapeter@cisco.com
 
 WORKDIR /opt
