@@ -1,36 +1,35 @@
 {% extends "base_layout.html" %}
-{% block content%}
+{% block content %}
 
 <h1>Data Center Services Status</h1>
     <table border="0" style="width:100%">
         <tr>
-            <td>
-    <table border="0" style="width:100%">
-        <tr>
-            <th bgcolor="#00abf0"><font color="white"><div class="left">Item</div></font></th>
-            <th bgcolor="#00abf0"><font color="white">Health</font></th>
-        </tr>
-        {% for n in data[0] %}
-        <tr>
-            <td>{{n['name']}}</td>
-            <td bgcolor="{{n['bgcolor']}}"><div class="center"><font color="white">{{n['health']}}</font></div></td>
-        </tr>
-        {% endfor %}
-    </table></td><td></td><td></td>
-            <td>
-    <table border="0" style="width:100%">
-        <tr>
-            <th bgcolor="#00abf0"><font color="white"><div class="left">Item</div></font></th>
-            <th bgcolor="#00abf0"><font color="white">Health</font></th>
-        </tr>
-        {% for n in data[1] %}
-        <tr>
-            <td>{{n['name']}}</td>
-            <td bgcolor="{{n['bgcolor']}}"><div class="center"><font color="white">{{n['health']}}</font></div></td>
-        </tr>
-        {% endfor %}
+                {% for app in apps %}
+                <td>
+                    <table border="0" style="width:100%">
+                        <tr>
+                            <th bgcolor="#00abf0"><font color="white"><div class="left">Item</div></font></th>
+                            <th bgcolor="#00abf0"><font color="white">Health</font></th>
+                            </tr>
+                        <tr>
+                            <td><b>{{ app.name }}</b></td>
+                            <td bgcolor="{{ app.bgcolor }}"><div class="center"><font color="white"><b>{{ app.health }}<b></b></font></div></td>
+                        </tr>
+                        {% for epg in app._children %}
+                        <tr>
+                            <td>{{ epg.name }}</td>
+                            <td bgcolor="{{ epg.bgcolor }}"><div class="center"><font color="white">{{ epg.health }}</font></div></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+                {% endfor %}
+
+    </tr>
     </table>
-                </td></tr></table>
+
+
+
 
 <div id="hostname"><p>Processed by {{ hostname }}</p></div>
 

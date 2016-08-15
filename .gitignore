@@ -2,3 +2,5 @@
 *.pyc
 *.idea
 .idea*
+creds.py
+test.py
