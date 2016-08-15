@@ -8,7 +8,7 @@ import creds
 
 def getHealthColor(item):
     if item > 90:
-        item_color = 'green'
+        item_color = '#52b918'
     elif item < 80:
         item_color = 'red'
     else:
