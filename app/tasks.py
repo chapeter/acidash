@@ -50,14 +50,14 @@ def getHealth():
         app.health = ACI.HealthScore.get_by_dn(session, app.dn)
 
         ##Here we are getting the color we are matching up against the health score
-        app.bgcolor = getHealthColor(app.health)
+        app.bgcolor = getHealthColor(int(app.health.cur))
 
         ##Below we are doing the same for EPGS in App, as we did Apps in Tenants
         epgs = ACI.EPG.get(session, parent=app, tenant=tenant)
         for epg in epgs:
             epg.dn = app.dn + "/epg-%s" % (epg.name)
             epg.health = ACI.HealthScore.get_by_dn(session, epg.dn)
-            epg.bgcolor = getHealthColor(epg.health)
+            epg.bgcolor = getHealthColor(int(epg.health.cur))
 
 
     ##We are going to return the apps object.  We could trim out a lot of info, but what we are needing
